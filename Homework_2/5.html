@@ -32,7 +32,77 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+ /**
+ * Returns the sum of a and b
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The sum of the entered numbers
+ */
+ function addingNum(a, b) {
+    return a + b;
+  }
+  
+  /**
+ * Returns the difference of the entered numbers
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The difference of the entered numbers
+ */
+  function subtractNum(a, b) {
+    if (a > b || a === b) {
+      return a - b;
+    } else if (a < b) {
+        return b - a;
+    } 
+  }
+
+  /**
+ * Returns the product of the entered numbers
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The product of the entered numbers
+ */
+  function multNum(a, b) {
+    return a * b;
+  }
+
+  /**
+ * Returns the quotient of the entered numbers
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The quotient of the entered numbers
+ */
+  function dividNum(a, b) {
+    return a / b;
+  }
+
+   /**
+ * Returns the result of performing a mathematical action on two numbers
+ * @param {number} arg1 The first number
+ * @param {number} arg2 The second number
+ * @param {string} operation The mathematical action
+ * @returns {number} The result of performing a mathematical action of the entered numbers
+ */
+function mathOperation(arg1, arg2, operation) {
+  if (operation === '+') {
+    return addingNum(arg1, arg2);
+  } else if (operation === '-') {
+    return subtractNum(arg1, arg2);
+  } else if (operation === '*') {
+    return multNum(arg1, arg2);
+  } else if (operation === '/') {
+    return dividNum(arg1, arg2);
+  } else {
+    return NaN
+  }
+}
+
+console.log(mathOperation(5, 3, "+"));
+console.log(mathOperation(5, 3, "-"));
+console.log(mathOperation(5, 3, "*"));
+console.log(mathOperation(5, 3, "/"));
+console.log(mathOperation(5, 3, "+-"));
+
 </script>
 </body>
 </html>

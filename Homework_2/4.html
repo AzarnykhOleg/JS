@@ -31,7 +31,58 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  /**
+ * Returns the sum of a and b
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The sum of the entered numbers
+ */
+  function addingNum(a, b) {
+    return a + b;
+  }
+  
+  /**
+ * Returns the difference of the entered numbers
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The difference of the entered numbers
+ */
+  function subtractNum(a, b) {
+    if (a > b || a === b) {
+      return a - b;
+    } else if (a < b) {
+        return b - a;
+    } 
+  }
+
+  /**
+ * Returns the product of the entered numbers
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The product of the entered numbers
+ */
+  function multNum(a, b) {
+    return a * b;
+  }
+
+  /**
+ * Returns the quotient of the entered numbers
+ * @param {number} a The first number
+ * @param {number} b The second number
+ * @returns {number} The quotient of the entered numbers
+ */
+  function dividNum(a, b) {
+    return a / b;
+  }
+
+  console.log(addingNum(7, 12));
+  console.log(subtractNum(10, 115));
+  console.log(subtractNum(115, 10));
+  console.log(subtractNum(117, 117));
+  console.log(multNum(12.3, -13.4));
+  console.log(dividNum(144, 12));
+
+
 </script>
 </body>
 </html>
