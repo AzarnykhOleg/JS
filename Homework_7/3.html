@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=28v4caVwmqpc9g1mgKEJ8xoVlUz1MMPArTZ6fL1K2zWHCUqCgc6cquI5IqdiCilwajmptwrO7eQKgeNC1wmFriNq3koLa9zIEEyDoFwXar0ZC75mUproFeyDQU_l9P3tWjTtqyZNoAwHmRS2ukDZ-hijYJA1WUmx_5I8AoykgC3hNULwx0gzsrMn8e7kF30tRqaVoRqSZGkIv7jwhxs5kc11z4DWQNkwXlO-55HdIqZiDWyc46bDz4vOEZXNwWMQqNOfAxBVCRrRn3ZBEtAQoMhE-TZ8b8i6z44-tTelGSFAdhGXX6BMumKHl7OqRr3x6yLF1r79ZGKyOJkxuuxktP5g9rMHifwR49b3emyU3cXk1nh7Q9KKxUWKFSkp8uI1oqRmL2zQeal19D-zJ9CQ9vqDWBcbmn_nN2PtZHPs9ja2Esdcu6AujBKjfJzwLkJ647AcvIyDy3Jq_qe3jdGKIBn9fbJy6sVIR1rnU2lcpc94ScKGpp-mZvALLPDnLwz-Dmm-UUX6fBY6AlRQ8h_G7_LaORS7bFQxeYxKZeRPxUI_xeqM34Y1bb3OkqljBTpGdVcQOl0Jy9rAE1F2kkI75BLl3B1v04tSmtjhDUCvMZDjejz3xZpui1Gb3TXgcOy3A4T8F8m9xkwCT3K1piWdBSE-tZ6Ynm86t-R_9bcTEJiv_PGtwRvjPE2csZDM-X7jCY07nfUlpfsjPcJYk18DDAG2Nj6vjdOJq7-uvT6rvQcNBkys2ictP25IQ6C_TIDfoK4pC0bIyLhUOYUBD3QptC6mga2WFuxHYwGtROQu0jrBSoirXoYwXt6OUoDclzx2uRk-mlAh9lAbj484n5Fl6udHtOHMrHUw4JTbzurY9fGN6hRwCjloZ1LNno3yhFTjQhxtyb_SX6HbsKjJJ7ggsoa-HBPeV0coIyAmhlt_uHJgTrAVS66kctfdtvJrDDS4dcptR3LCYfeksGp71Hluuu4q49xEG9NZXB96hyp0XSeHZYLM8sb8DbrB_Uofg_trRLBOoFyAmMwMDeDyDHfgXWf4mrSeVZASSDPpHugkrWtoYdqs810144sZyy-8Y3q6q_p8YvGRuNIvIm6ml7wHOZ8C8F79N3rrq8x8wBlfu7lOJT8SZWxKeoiy8sFINOVfzqvC9GnIsj6SPaDTd5TLRWlTDV_V9H1c--exbiE8khw" charset="UTF-8"></script></head>
+<body>
+<!--
+Необязательное задание.
+
+Ваша задача - создать функцию, которая может принимать любое неотрицательное
+целое число в качестве аргумента и возвращать число с теми же цифрами, но в
+порядке убывания.
+Если проще - переставьте цифры, чтобы получить максимально возможное число из
+данного набора цифр.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция перемещает цифры получая наибольшее число.
+   * @param {number} n - Число, из цифр которого нужно составить наибольшее
+   * возможное число с теми же цифрами.
+   * @returns {number} - Набольшее число из набора цифр числа, переданного в
+   * параметр "n"
+   */
+   function descendingOrder(n) {
+    return +n.toString().split('').sort((a, b) => b - a).join('');
+    // return +Array.from(n.toString(), Number).sort((a, b) => b - a).join('');
+  }
+
+  console.log(descendingOrder(42145));
+  console.log(descendingOrder(145263));
+  console.log(descendingOrder(123456789));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=oLEeYT181kXBegH_nqTeXQZE31HJOx6dPH6Y7Ikjvc1KcG9OKj0Q4bTVbQO2tvYpi3s3xhQYvMJ0SRtNdr9w2o0dcmldoyoLLyDGkCXaO20nXbH12kyT6xjN2wJ-b-cSMZWU2DtiB-NehO8ts5yr-wtLSj_sOrSbYwVAeFlYxPU7ramckwTfWbi5bkJFpkaWlOqe4Lr-u5zBbNlUDOHoYzTXMlBSzJSXVNHfIyq5blscjAb1aLhHPt8DrmjklXqKXRPz97fe0kJOLEfDt6ty7tHV4_bf0WlAtP-crBsR2FP_SlvquxmmJJ1BefR_7-5ZNrXWwJZvzu6x_qOTbgdcPa1dNIFL-5jpYZjJJm3TPK3K0flRSY95v3Vx-pKO9UjOs2_4lDmyzbNV50_CUY7WKmoCYY9MiTalteKgwv4rVhkiDTF7ydF5wyd5Kxntd-43_xYTaANlAOtUZTzS6FD0QDFJz7591T2EaTa-a31gZw0hk3RvNFz8RYdCvUvf8O8I5k8x79ghZi1_dTFCTsgRBZIZGx6INsZHw5V_m5T-gAgEALRubxIuGUp7bWyD4X4e7t_FG0q6jMmkYncQ6uIUW_bLCpV-AD2QsXwIfApdWk0fNqxe8gbySunp8tsiBFkzfKTNh61o_mtBoP4Mxschx38CRtMnp_zLJzNnVnTLSN9eK_BYgNMocOtkJce7F9DXK5mFs3MOiCXP3JOOwPn6uPxOFUoeeF3FHCQ97QfE3UcknDw33zSF7HxTzwd777kbS6MN5UboSrxnUDwQQWd9AWufGe33FIsiCnlXm1kCTWUfzz5Ha_0OGi2x5MTvb1KcyGA0Iytb7UwwY6T5J_iVK8hZiFs3L11IumJ9L4ayJbUTH_z4-_wufuMJY11GvrSoP4ojdDyzwL_0dGya3U6sWFTFaOTYSTl6Hsnr2uWvzrYwTb70m7nfCHtbpdo4AuWk17LpLQW8TkF0lSDXwFh9isInrvoJ-PyEy9cS8TdC4dZfvP5b3afX6yGcKZ-VvoVt59LXwQ1-Nkf8-s1zxRCvb6JJGFI2uzZGJzyiqfmvy2zFfQ5wH0yWynwYsNjA6Fx88gH8zk-fqzkfU1LUE5PXpoE91be7FINkR4F9dyTHB_B3HCZOG8jnttjR7kmENE8LzFF4GH-fWSMUGQuqJtcgZ1EVReWIYnQjxYpq5aJLxtg" charset="UTF-8"></script><style>
+    .products {
+      overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .product {
+      float: left;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <button class="menuButton" data-type="phones">Показать смартфоны</button>
+  <button class="menuButton" data-type="tablets">Показать планшеты</button>
+  <button class="menuButton" data-type="tv">Показать телевизоры</button>
+</header>
+
+<div class="products"></div>
+
+<script>
+ /*
+  1. Программист Паша уволился с работы и не закончил задачу.
+  Задача состояла в том, чтобы при клике на какую-либо кнопку в теге header
+  выводить продукты в div с классом products.
+  Продукты, которые надо вывести, валидны и прописаны в объекте products.
+  Однако, Паша явно сделал много ошибок в других кусках кода, вам необходимо
+  исправить все ошибки и внимательно проверить чтоб код работал правильно и
+  ничего лишнего не выводилось в div с классом products.
+  */
+
+  class Product {
+    constructor(id, name, price, imageUrl) {
+      this.id = id;
+      this.name = name;
+      this.price = price;
+      this.imageUrl = imageUrl;
+    }
+
+    /**
+     * @returns {string} html-разметка для товара
+     */
+    getProductMarkup() {
+      return `
+        <div class="product">
+            <div>${this.name}</div>
+            <img src="${this.imageUrl}" alt="">
+            <div>Цена: <span>${this.price}</span> р.</div>
+            <a href="https://example.com/producs/${this.id}">Подробнее</a>
+        </div>
+      `;
+    }
+  }
+
+  const products = {
+    phones: [
+      new Product(1, "Смартфон 1", "2533", "https://loremflickr.com/200/300/goods?lock=31"),
+      new Product(2, "Смартфон 2", "3123", "https://loremflickr.com/200/300/goods?lock=32"),
+      new Product(3, "Смартфон 3", "6123", "https://loremflickr.com/200/300/goods?lock=33"),
+    ],
+    tablets: [
+      new Product(4, "Плашнет 1", "5239", "https://loremflickr.com/200/300/goods?lock=34"),
+      new Product(5, "Плашнет 2", "6483", "https://loremflickr.com/200/300/goods?lock=35"),
+    ],
+    tv: [
+      new Product(6, "Телевизор 1", "4314", "https://loremflickr.com/200/300/goods?lock=36"),
+      new Product(7, "Телевизор 2", "5412", "https://loremflickr.com/200/300/goods?lock=37"),
+      new Product(8, "Телевизор 3", "3577", "https://loremflickr.com/200/300/goods?lock=38"),
+      new Product(9, "Телевизор 4", "8714", "https://loremflickr.com/200/300/goods?lock=39"),
+    ],
+  };
+
+  const productsEl = document.querySelector('.products');
+  document.querySelector('header').addEventListener('click', event => {
+    if (!event.target.classList.contains('menuButton')) {
+      return;
+    }
+    productsEl.innerHTML = products[event.target.dataset.type]
+      .map(product => product.getProductMarkup()).join("");
+  });
+
+</script>
+</body>
+</html>

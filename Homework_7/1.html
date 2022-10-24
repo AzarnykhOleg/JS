@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=JxXLYcRkMTHW6QcEktYvJLA1Hr-P5ZP3mt56wPkQc25QB2jHNU9kwHUi93KRalLJ_BO-aDhtQJwEYtCx6sk4LzmKdcfvUovb7ePp4K2Xv2MKR2WldgH0FBBCExlaDRa5tLja9CAktUW8-C2EcUGLgk0ZX87NZJGXDXCmcWfbhosHhngRnjY0llkPMpNRJb-nA-jNw0ccBEicbCd6t5V9A9Rc4RI3Uzh0zuVxxHap39c0zK8-7AdNW25eySNbzbZDAt8C54ug9XrsDz3Ywf-dFytgv8GKbVG6VT5QKmSWtvTO1BUrOVSmPQ2gWAQ7SOyblzptF29d7ABVm9G253C_0GfvZ32tCloBgNKoe03pgyjk9icV5C6KUUqyMs0uTc-KpLRlp3xAdyEVS55gK5YzAJkJlqC73MqKzDgGtY-6fknjGl-mSTP39LHasWOiKmdG6V6sEsrCqGuIK5P3nFXvfNLkzW1H8F3o2Wu3nKbqFHhM2OBg5ctaHN2-NCftriaJoe4rw-pGDJmriQLJQpPu4kGXxM96VnMUOJ1J-2nyxRWh_gLLetSGtEeeMq2JeImzwsWBzOlzhUNAGwlq-xwnlyAZ7U9THjmg_kAs5r1vlQsK-5CVZ04Z1VewKql6hYfuBMKxy9UyV90l1VtbAheubaI0TuD2QX-e8tOPV9ufw0mGIvlIzXd-JKuul65gknqmYh7rU434V1wxgcF38NnbDdtMLrCdfEud6Zubs9qkAMNRNTHU8z8iugpeHXtrqFd71KwhMUc3Hgb89yhsND_LYp3EKqcr7Nh-gyve59FL7VgQc1RGTNOzGVzQ78mUuwUYl1MhB8s3MXsgj1kQIw0CdXfP6gEZaGgFoy6NFBR-35nQ8XEm62kjriB1W2EVtvwXMJd4nyByDLlj-VFQe8T8lbVqC7zZcvlt2rpeESO2nQexN37fxdKiTZ8VxON4coz-w9_T9nCjTG6_rXWRo5cfHTZajrS_Q-S_i95bc2nwB9Dir4MY5wf8u2KN1vD1D3AiyEKSoy6jzyxPPb5NzK7yCqfWIesSzKYWP718PMTUv1yOPpFzT9Es-vkWzpYuKHrCEjZ3IElove49eVwjB2HgsaTOs-X5ABt6GuUJ3SN4oDr0f1wbvKO-4mPybD1H6aAczXHtBEuhY_aW-wGuRqLgTlw4A4hvcs51CdfAJgFh758" charset="UTF-8"></script><style>
+    .nav {
+      margin-top: 30px;
+    }
+    #inputDiv {
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item" data-text="T1">
+      <a class="nav-link active" href="#">Link 1</a>
+    </li>
+    <li class="nav-item" data-text="X6">
+      <a class="nav-link" href="#">Link 2</a>
+    </li>
+    <li class="nav-item" data-text="H99">
+      <a class="nav-link" href="#">Link 3</a>
+    </li>
+  </ul>
+
+  <div class="text">Уверен, ты справишься с этим заданием!</div>
+
+  <input type="range" min="20" max="100">
+  <div id="inputDiv">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, expedita.
+  </div>
+</div>
+
+<script>
+  "use strict";
+
+   /*
+  1. Необходимо сделать так, чтобы при клике на элемент с классом "nav-link",
+  данному элементу ставился класс "active", при этом у всхе других элементов с
+  классом nav-link данных элемент отсутствовал, необходимо использовать
+  делегирование события.
+  Также необходимо чтобы в div с классом text ставился нужный текст, который
+  прописан в объекте panelText (вам необходимо определить самостоятельно, что
+  общего между данной в html версткой и объектом ниже).
+  */
+  const panelText = {
+    T1: "Уверен, ты справишься с этим заданием!",
+    X6: "Знаю, программирование это нелегко.",
+    H99: "Однако, программирование, в итоге, принесет свои плоды.",
+  };
+
+  let activeLinkEl = document.querySelector('.active');
+  const textDivEl = document.querySelector('div.text');
+  document.querySelector('.nav-tabs').addEventListener('click', event => {
+    if (!event.target.classList.contains('nav-link')) {
+      return;
+    }
+
+    activeLinkEl.classList.remove('active');
+    event.target.classList.add('active');
+    activeLinkEl = event.target;
+
+    textDivEl.textContent = panelText[event.target.parentElement.dataset.text];
+  });
+
+  /*
+  2. Необходимо сделать так, чтобы при изменении input'а менялся и размер шрифта
+  у элемента с id="inputDiv". Перемещение ползунка должно плавно увеличивать
+  шрифт у текста, никакого резкого увеличения шрифта не должно быть при
+  перетаскивании ползунка.
+   */
+  const divEl = document.getElementById('inputDiv');
+  const inputEl = document.querySelector('input');
+  inputEl.value = Number.parseInt(getComputedStyle(divEl).fontSize).toString();
+  inputEl.addEventListener('input', event => {
+    divEl.style.fontSize = `${event.target.value}px`;
+  });
+
+</script>
+</body>
+</html>
