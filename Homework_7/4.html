@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=znwOlXuWaF1QF0awYYR4D-BFlPYgpOZ7zqAgT_q3NyXyLTrCRPK435P9GcrDReP_tUhraBP0LOq0utvkTx2dDzCVmPNKQ26ndDgR450oxqK0oomg_1Pvr4qBclEgTfE1VwL157MT4n3s64GPrdRyhtrbCkfOxYAXdP9THZsodDKrRPqrY4B9-XbhQb1IptKnW4LG6-3QVIoEF4H-ReI48uUS_qt9w0z_LRVSS1QD1ARXHgEkdVBXmrDioIeSdgSc9ctblxRHzekH7K6AL2xeiuOharfLnz650QtMSbmTYyqQQTctJT--D_J-_0IpN7qIQO6WjtqcMpaZAJ1rtWhLJzDqzxef84hRtKX3F37OabugZtK2K2R7Dq_cX_cqHyrWk7mA3FnCob7RCiACpKdOSE99CDwnFofgnHT5Cch2mOpYiMktlhpLteb1KI12VymTrMgdYQxzBw4bFhhqInYcZMYP6xTlNIaUZoCMkNatCe5kxj9UGh7QiggHcl6EQ1KZjVuMq91O_9RqQcyxPZLgLqmmxPbOsF9xq1O5w4leNcG-VbHTnFY_LKtCi1S-0129ZkXwp52N5HANVz9YXV9ISSShfH8bDhehhEO8wqv0KkKE4fVzCbo6MbSn7Y-5SVtWRCLN-2x-B1c4nSJunwiipdAB_8dPpjVUSuteC8TETCkNKMdWjv8j86aaUpunpxxJfH_tm67yJ_mh238vnndeOlE-OM_RvUkyzDnIavU4Ye0ara_HdJBIc03lRYbELB1XqfewqQwTYxLL5rWcyPaxYWXq1JdcIqczlFA81SpbBU3nPc9TkvdaqrpajAkmUIW9iRS9adM5NVEwX3TSO1aw_E8hjVPv0TkJM3kOkIYmx4OZWnXqJNsohAC0UKpUk-RXTLGmwBU-AI37hJCE1dQNY7gc4XcIN84ae3eJItwsSL7ivpP3JExfP1h1FsmO3BIWmxlHlc7AQ5V95In1CYIM-JbNvlGBY-RGiWMPYT4JOrgSPM8t5kxMJiyi46BQmvKit2S3OYSa8_-uWPjgcD_q3pxZZVP9H5nynsHlqtyr3vyoyNpNJdxATvK1KMCITO7IuqoHCpAM5ZxBJm_i7bCPewwVlm4LuokWoRavHWa0tlIwy3lSmDeLBWIzfSGEqLUyLXNHnSYckdn5IPsBh35XUjrfmmaOYIP4dDef5zPg0JQ" charset="UTF-8"></script></head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо реализовать функцию-конструктор Rectangle.
+-->
+<script>
+  "use strict";
+
+ /**
+   * Returns the rectangle object with width and height parameters and
+   * getArea() method.
+   *
+   * @param {number} width - Rectangle width
+   * @param {number} height - Rectangle height
+   * @return {Rectangle}
+   */
+   function Rectangle(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  Rectangle.prototype.getArea = function() {
+    return this.width * this.height;
+  };
+
+  const r = new Rectangle(10,20);
+  console.log(r.width);
+  console.log(r.height);
+  console.log(r.getArea());
+
+</script>
+</body>
+</html>
