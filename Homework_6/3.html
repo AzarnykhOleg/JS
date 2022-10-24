@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=EdEtW3M_cHJQmoK18Uu9lNRnJlnG_FN3XIDHuq2pCGEirA0mfg0KaeBbQPENGWrDJB0mP_brxl8mx57GXNyJ-Up5MG6pmUDDtDj0O0qqxDgxWtkmNor4qPlpDlBpsWC0GU0OiXzHnnSlowTNdRqbNycga0p52ubFlGyqt2Z9zSSgrNW8HJhp8h8V_NtIhYX5OKuasW7FRSewiVY0QlkudK2L-aulnPgV3AWmuG89wL6K7msJYNZQBOO8WMdaR1hXeNajxaaWbj3e1QSM9KIc52aOlAiFns4tNg6YKTWvxrtL3tYkJIFwqTPPeC2__V4J-Oq8pzEaDt4UwCS4-QtdYGgUGZ0IFrgFZauxS6-lzGdphc_G_j7Zug-iLF0OTTgnwC41U9Qm3J9NJrkff2QogWmOK9KvkPEUmL7-18vUprRvXJgL4CbOzaPALXBBSsac70RYxF1VPnTvcWEml-2rX5wyfmAfns_Trm73DSFnFqieWvQPqV7ZjkWom-3TvooLHOBhyyRdUMLjox0axLPWf0T103_52B7R5sl6T8CamJR48Ojvttco3qxKQp2TZ9tD7jswAv3V5PSxaC3_uI7SfE1MeB5z5XmUJzCOKMDAJTrCVeyHqiyO2azPjixtK3kTfciOHxIJ0sRQM0JYF0rFXsDngtqzNOeT_3DUjExwqUuoPHKluCT03pKaQUiotwC9uHGvHR7cwFCIPq43_epPJFkkyjuu5evEH3ZYxsdjYXC88lOz-KHvTkqVztlfRWlUfwMrRdcy7imPezGnBuAf4UYQeNnXK_aQ8Pz2bNTpIAW14GJ-LdpT2M-Tv3aiA5PrH7OmDmpDwJu5i5DdXY0A6mzQgDBCBLFMeErRAgZPjaaqCVexBVPL0zZXJpdsArOYmbPfMfy1yOLhqhPrIER7GTy7APJ-h-apqLT4SHG1vJLquTkx7W5tGMJicn7r-JDwPmgB9ykDhmtSuh6pNdJKr0cw_EON3-ujaVO5rVthIndp_YVBT8CyCMYGULIMLx4vwoEXRiaVTnGb2AbwoKcbSiLyQGk2mLtEC3U7ITI14KlKWSC62OX9D1Y1QY665W3b94SwVhzrnYVSZ__vnhBYT_AdIIYH3kZ_i0P-61nR09ldgG88TZb2VpA5ENYY0GbuE1gnZB1hG7vpLyb9M2TtWFpMCT_auRqlUn1G0dRPBXA" charset="UTF-8"></script><style>
+    i {
+      font-size: 50px;
+    }
+    .golden {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+<div class="stars_container">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+</div>
+
+<script>
+  "use strict";
+
+   /*
+  1. При наведении на любую из звезд, данной звезде должен ставиться класс
+  golden, также такой класс должен ставиться всем звездам до нее слева.
+  */
+  document.querySelector('.stars_container')
+    .addEventListener('mouseover', e => {
+      if (!e.target.classList.contains('fas')) {
+        return;
+      }
+      let star = e.target;
+      do {
+        star.classList.add('golden');
+        star = star.previousElementSibling;
+      } while (star);
+    });
+
+  /*
+  2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
+  задания должны быть удалены.
+   */
+  document.querySelector('.stars_container').addEventListener('mouseout', e => {
+    if (!e.target.classList.contains('fas')) {
+      return;
+    }
+    let star = e.target;
+    do {
+      star.classList.remove('golden');
+      star = star.previousElementSibling;
+    } while (star);
+  });
+
+  /*
+  3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
+  звезды (временно могут становиться черными). Почему так? Напишите словами.
+  Можем ли мы это исправить? Если да, то предложите решение.
+  */
+  /*
+  Между звездами есть пробел - перенос строки. Мы  можем:
+  1. Записать все теги i слитно, без пробелов и переносов строк в html.
+  2. Можем добавить классу .fa или .fas свойство margin-right: -5px;
+  3. Может добавить классу .stars_container свойство display: flex;
+  4. Можем исправить это в JavaScript удалив все текстовые узлы в теге с
+  классом stars_container, что в примере ниже.
+   */
+  document.querySelector('.stars_container').childNodes.forEach(node => {
+    if (node.nodeName === '#text') {
+      node.remove();
+    }
+  });
+
+</script>
+</body>
+</html>
